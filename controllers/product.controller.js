@@ -22,5 +22,24 @@ module.exports.createProduct = async (request, response) => {
         response.status(400);
         response.json(error);
     }
+}
 
+module.exports.getAllProduct = async (request, response) => {
+    try {
+        const products = await Product.find({})
+        response.json(products)
+    } catch (error) {
+        response.status(400);
+        response.json(error);
+    }
+}
+
+module.exports.getProduct = async (request, response) => {
+    try {
+        const product = await Product.findOne({_id:request.params.id})
+        response.json(product)
+    } catch (error) {
+        response.status(400);
+        response.json(error);
+    }
 }
