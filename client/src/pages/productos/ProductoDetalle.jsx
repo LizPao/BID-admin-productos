@@ -17,8 +17,12 @@ const ProductoDetalle = () => {
 
     }, [id])
 
+    const eliminarProductoDetalle = async (productoID) => {
+        await axios.delete(`${process.env.REACT_APP_API_URL}/product/${productoID}`);
+    }
+
     return (
-        <div className="card">
+        <div className="card" style={{width: "38rem"}}>
             <div className="card-header">
                 Detalle del Producto
             </div>
@@ -27,6 +31,7 @@ const ProductoDetalle = () => {
                 <p className="card-text">Precio: {producto.price}</p>
                 <p className="card-text">Descripcion: {producto.description}</p>
                 <Link to="/productos" className="btn btn-primary">Volver</Link>
+                <Link to="/productos" className="btn btn-danger ms-2" onClick={() => { eliminarProductoDetalle(producto._id) }}>Eliminar</Link>
             </div>
         </div>
     )

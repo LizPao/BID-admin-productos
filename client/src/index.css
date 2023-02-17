@@ -12,14 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.home{
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  margin-top: 20%;
+  color: #0A72FE;
+}
 .agregar-producto, .listado-productos{
-    max-width: 940px;
-    font-size: 35px;
-    font-family: Lato, sans-serif;
-    font-weight: 700; /*peso de la letra*/
-    line-height: 1.1; /*altura de la letra*/
-    margin: 40px 0;
+  text-align: center;
+  max-width: 940px;
+  font-size: 35px;
+  font-family: Lato, sans-serif;
+  font-weight: 700; /*peso de la letra*/
+  line-height: 1.1; /*altura de la letra*/
+  margin: 40px 0;
 }
 
 

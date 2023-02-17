@@ -43,3 +43,23 @@ module.exports.getProduct = async (request, response) => {
         response.json(error);
     }
 }
+
+module.exports.updateProduct = async (request, response) => {
+    try {
+        const product = await Product.findOneAndUpdate({_id: request.params.id}, request.body, {new: true}) //devuelve producto actualizado
+        response.json(product)
+    } catch (error) {
+        response.status(400);
+        response.json(error);
+    }
+}
+
+module.exports.deleteProduct = async (request, response) => {
+    try {
+        const product = await Product.deleteOne({_id: request.params.id})
+        response.json(product)
+    } catch (error) {
+        response.status(400);
+        response.json(error);
+    }
+}

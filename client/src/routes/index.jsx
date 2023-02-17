@@ -6,6 +6,7 @@ import NotFund from "../pages/NotFund";
 import ProductoDetalle from "../pages/productos/ProductoDetalle";
 import Productos from "../pages/productos/Productos";
 import ProductosAdd from "../pages/productos/ProductosAdd";
+import ProductoEditar from '../pages/productos/ProductoEditar'
 
 export default createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export default createBrowserRouter([
             {
                 path:'productos/:id',
                 element: <ProductoDetalle />
+            },
+            {
+                path:'productos/:id/editar',
+                element: <ProductoEditar />
             },
 
         ]
